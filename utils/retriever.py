@@ -1,5 +1,8 @@
 from langchain_chroma import Chroma #import the chroma database 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings #import the embedding model
+from dotenv import load_dotenv
+
+load_dotenv()
 
 embedding_model=GoogleGenerativeAIEmbeddings( #this is the machine that turns text into vector embeddings 
     model="models/gemini-embedding-001"

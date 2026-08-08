@@ -26,3 +26,4 @@ def create_vector_db(embedded_chunks):
             ],
             ids=[f"chunk_{index}"]
         )
+    return True

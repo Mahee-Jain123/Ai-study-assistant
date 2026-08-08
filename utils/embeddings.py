@@ -15,7 +15,7 @@ def create_embeddings(chunks):
         embeddings.append({ # the list that conatins all the embedings and relevant information 
             "page":page_number,
             "chunk":text,
-            "embeddings":embedding, # the vector that conatins the embedded text [0.2,0.34,-0.98] etc
+            "embedding":embedding, # the vector that conatins the embedded text [0.2,0.34,-0.98] etc
             })
 
     return embeddings

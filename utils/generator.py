@@ -1,7 +1,7 @@
 from langchain_google_genai import ChatGoogleGenerativeAI #model that turns embeddings into text beacuse gemin understands text better 
 
 llm=ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash"
+    model="gemini-3.5-flash"
 )
 def generate_answers(question,relevant_documents):
     context=""

@@ -1,9 +1,7 @@
 from fastapi import File,UploadFile,HTTPException,FastAPI
 from pathlib import Path
+from utils.pipeline import processing_pdf
 app=FastAPI()
-def process_pdf(pdf_path: Path) -> bool: #placeholder function for processer 
-     print(f"Processing{pdf_path}")
-     return True 
 @app.post("/upload/")
 async def upload_pdf(file: UploadFile = File(...)):
     if file.content_type != "application/pdf":  # check if the uploaded file is a pdf
@@ -14,7 +12,7 @@ async def upload_pdf(file: UploadFile = File(...)):
     contents = await file.read() # read the bytes in the pdf into the memory 
     pdf_path.write_bytes(contents) # write the bytes stored in  contents to the file in file location 
     try:
-        success = process_pdf(pdf_path) # if the pdf is not processed due to any reason 
+        success = processing_pdf(pdf_path) # if the pdf is not processed due to any reason 
         if not success:
             raise HTTPException(
                  status_code=500,
