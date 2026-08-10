@@ -26,4 +26,5 @@ def generate_answers(question,relevant_documents):
     Answer:
     """
     response = llm.invoke(prompt)
-    return response.content
+    
+    return response.content[0]["text"]

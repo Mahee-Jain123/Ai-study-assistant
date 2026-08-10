@@ -8,10 +8,10 @@ class Question(BaseModel):
 @app.post("/ask/")
 async def ask(ques: Question):
     ans = processing_questions(ques.question)
+    print(type(ans))
+    print(ans)
     return {
         "question":ques.question,
         "answer":ans
     }
-
-
 
