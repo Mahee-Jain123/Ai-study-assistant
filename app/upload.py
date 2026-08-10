@@ -10,6 +10,8 @@ async def upload_pdf(file: UploadFile = File(...)):
     uploads.mkdir(exist_ok=True) # create an uploads folder if not already there 
     pdf_path = uploads/file.filename # pdf_path is path object representation the location where the path will be saved 
     contents = await file.read() # read the bytes in the pdf into the memory 
+    if not contents:
+         raise HTTPException(status_code=400,detail="the pdf is blank")
     pdf_path.write_bytes(contents) # write the bytes stored in  contents to the file in file location 
     try:
         success = processing_pdf(pdf_path) # if the pdf is not processed due to any reason 
