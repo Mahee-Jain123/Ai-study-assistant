@@ -174,32 +174,36 @@ GOOGLE_API_KEY=your_api_key_here
 
 # Running the Project
 
+### 1. Start the FastAPI Backend
 ```bash
-python main.py
+# Activate virtual environment
+# Windows: venv\Scripts\activate | macOS/Linux: source venv/bin/activate
+
+uvicorn app.main:app --reload --port 8000
 ```
+Backend API docs available at `http://127.0.0.1:8000/docs`
+
+### 2. Start the React Frontend
+```bash
+cd study-assistant-frontend
+npm run dev
+```
+Open your browser at `http://localhost:5173`
 
 ---
 
-# Testing
+# Features Built
 
-Individual modules can be tested using
+-  FastAPI Backend with CORS & ChromaDB vector store
+-  Interactive React + Vite Web UI
+-  Drag & Drop PDF Upload directly from browser
+-  Full Chat History & Persistence
+-  Source Citations with Page Numbers & Snippets
+-  One-Click Deep Summary Mode
+-  Auto-Generated Practice Quizzes with Answer Keys
+-  Key Concepts & Definitions Extraction
+-  Dark Mode / Light Mode Support & Text-to-Speech (Read Aloud)
 
-```bash
-python test_pdf_loader.py
-python test_chunker.py
-python test_embeddings.py
-```
-
-#  Future Improvements
-
-- FastAPI backend
-- Web interface
-- PDF upload from browser
-- Chat history
-- Multiple document support
-- Source citations
-- Docker support
-- Cloud deployment
 
 ---
 
