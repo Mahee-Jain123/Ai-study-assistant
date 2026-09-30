@@ -95,7 +95,8 @@ async def upload_pdf(file: UploadFile = File(...)):
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error processing PDF: {str(e)}")
+        print("UPLOAD ERROR:", repr(e))
+        raise
     finally:
         if temp_path.exists():
             try:

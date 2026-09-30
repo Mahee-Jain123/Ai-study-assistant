@@ -6,7 +6,7 @@ load_dotenv()
 
 # Gemini model for conversational QA and study generation
 llm = ChatGoogleGenerativeAI(
-    model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
+    model=os.getenv("GEMINI_MODEL", "gemini-3.8-flash"),
     temperature=0.3
 )
 
